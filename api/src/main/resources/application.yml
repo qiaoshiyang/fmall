@@ -1,0 +1,37 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /fmmall
+spring:
+  application:
+    name: fmmall-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/fmmall?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      db-type: mysql
+      initial-size: 5
+      min-idle: 5
+      max-active: 200
+      max-wait: 10000
+      #test-while-idle: true
+      #validation-query: SELECT 1 FROM DUAL
+      test-on-borrow: false
+      test-on-return: false
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 15000
+      default-auto-commit: true
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 30000
+      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,slf4j
+      #有多个数据源时，配置公用监控数据
+      use-global-data-source-stat: true
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.qfedu.fmmall.entity
+  configuration:
+    map-underscore-to-camel-case: true

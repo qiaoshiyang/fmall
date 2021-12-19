@@ -1,0 +1,5 @@
+com\equfe\fmmall\vo\ResultVO.class
+com\equfe\fmmall\utils\PageHelper.class
+com\equfe\fmmall\utils\Base64Utils.class
+com\equfe\fmmall\vo\ResStatus.class
+com\equfe\fmmall\utils\MD5Utils.class
