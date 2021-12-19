@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/user")
 @Api(value = "用户相关接口", tags = "用户操作接口")
-@CrossOrigin
 public class UserController {
 
     @Autowired

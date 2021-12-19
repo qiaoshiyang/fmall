@@ -1,5 +1,6 @@
 package com.qfedu.fmmall.service.impl;
 
+import com.equfe.fmmall.utils.Base64Utils;
 import com.equfe.fmmall.utils.MD5Utils;
 import com.equfe.fmmall.vo.ResStatus;
 import com.equfe.fmmall.vo.ResultVO;
@@ -41,7 +42,8 @@ public class UsersServiceImpl implements UsersService {
             String md5Pwd = MD5Utils.md5(pwd);
             assert md5Pwd != null;
             if(md5Pwd.equals(users.get(0).getPassword())){
-                return new ResultVO(ResStatus.OK, "登陆成功", users.get(0));
+                String encode = Base64Utils.encode("name" + 123456);
+                return new ResultVO(ResStatus.OK, encode, users.get(0));
             }else{
                 return new ResultVO(ResStatus.NO,"登录失败，密码错误！",null);
             }

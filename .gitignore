@@ -7,7 +7,7 @@
 out
 gen
 *.class
-/*/target/
+/*/target
 
 # Log file
 *.log
