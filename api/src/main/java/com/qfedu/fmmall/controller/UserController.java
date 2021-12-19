@@ -23,6 +23,15 @@ public class UserController {
     @Autowired
     private UsersService usersService;
 
+    /**
+     * 用户登录接口
+     *
+     * @param name 用户名
+     * @param pwd 密码
+     * @return com.equfe.fmmall.vo.ResultVO
+     * @author ShiYang
+     * @date 2021/12/19 22:10
+     */
     @ApiOperation("用户登录接口")
     @GetMapping("/login")
     public ResultVO login(@RequestParam("username") String name,
@@ -30,6 +39,14 @@ public class UserController {
         return usersService.checkLogin(name, pwd);
     }
 
+    /**
+     * 用户注册接口
+     *
+     * @param user 用户信息
+     * @return com.equfe.fmmall.vo.ResultVO
+     * @author ShiYang
+     * @date 2021/12/19 22:09
+     */
     @ApiOperation("用户注册接口")
     @PostMapping("/register")
     public ResultVO register(@RequestBody Users user){
